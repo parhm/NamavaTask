@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true"
+    tools:context=".ui.view.VideoDetailFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <TextView
+            android:id="@+id/tv_detailFragment_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="24dp"
+            android:textColor="@color/text_color"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Video Title" />
+
+        <ImageView
+            android:id="@+id/iv_detailFragment_thumbnail"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_margin="34dp"
+            android:background="@color/gray"
+            android:scaleType="centerCrop"
+            app:layout_constraintDimensionRatio="2:1"
+            app:layout_constraintEnd_toEndOf="@id/guideline_detailFragment_right"
+            app:layout_constraintStart_toStartOf="@id/guideline_detailFragment_left"
+            app:layout_constraintTop_toBottomOf="@+id/tv_detailFragment_title" />
+
+        <FrameLayout
+            android:id="@+id/fl_detailFragment_duration"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="12dp"
+            android:background="@drawable/rounded_view"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_detailFragment_thumbnail"
+            app:layout_constraintEnd_toEndOf="@+id/iv_detailFragment_thumbnail">
+
+            <TextView
+                android:id="@+id/tv_detailFragment_duration"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                tools:text="00:00" />
+        </FrameLayout>
+
+
+        <ImageView
+            android:id="@+id/iv_detailFragment_play"
+            android:layout_width="46dp"
+            android:layout_height="46dp"
+            android:background="@drawable/circle_background"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_detailFragment_thumbnail"
+            app:layout_constraintEnd_toEndOf="@+id/iv_detailFragment_thumbnail"
+            app:layout_constraintStart_toStartOf="@+id/iv_detailFragment_thumbnail"
+            app:layout_constraintTop_toTopOf="@+id/iv_detailFragment_thumbnail"
+            app:srcCompat="@drawable/ic_play_arrow" />
+
+        <com.google.android.material.progressindicator.CircularProgressIndicator
+            android:id="@+id/pb_videoDetailFragment"
+            android:layout_width="54dp"
+            android:layout_height="54dp"
+            android:indeterminate="true"
+            android:indeterminateTint="@color/purple_700"
+            android:visibility="invisible"
+            app:layout_constraintBottom_toBottomOf="@+id/iv_detailFragment_thumbnail"
+            app:layout_constraintEnd_toEndOf="@+id/iv_detailFragment_thumbnail"
+            app:layout_constraintStart_toStartOf="@+id/iv_detailFragment_thumbnail"
+            app:layout_constraintTop_toTopOf="@+id/iv_detailFragment_thumbnail" />
+
+        <ImageView
+            android:id="@+id/iv_detailFragment_viewCount"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="46dp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_detailFragment_favorite"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="@id/guideline_detailFragment_left"
+            app:layout_constraintTop_toBottomOf="@+id/iv_detailFragment_thumbnail"
+            app:srcCompat="@drawable/ic_play_circle_filled" />
+
+        <TextView
+            android:id="@+id/tv_detailFragment_viewCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="@+id/iv_detailFragment_viewCount"
+            app:layout_constraintStart_toStartOf="@+id/iv_detailFragment_viewCount"
+            app:layout_constraintTop_toBottomOf="@id/iv_detailFragment_viewCount"
+            tools:text="0" />
+
+        <ImageView
+            android:id="@+id/iv_detailFragment_favorite"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            app:layout_constraintEnd_toStartOf="@+id/iv_detailFragment_comment"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_detailFragment_viewCount"
+            app:layout_constraintTop_toTopOf="@+id/iv_detailFragment_viewCount"
+            app:srcCompat="@drawable/ic_favorite_border" />
+
+        <TextView
+            android:id="@+id/tv_detailFragment_favorite"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="@+id/iv_detailFragment_favorite"
+            app:layout_constraintStart_toStartOf="@+id/iv_detailFragment_favorite"
+            app:layout_constraintTop_toBottomOf="@id/iv_detailFragment_favorite"
+            tools:text="0" />
+
+        <ImageView
+            android:id="@+id/iv_detailFragment_comment"
+            android:layout_width="34dp"
+            android:layout_height="34dp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_detailFragment_right"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toEndOf="@+id/iv_detailFragment_favorite"
+            app:layout_constraintTop_toTopOf="@+id/iv_detailFragment_favorite"
+            app:srcCompat="@drawable/ic__comment"
+            app:tint="#6C6C6C" />
+
+        <TextView
+            android:id="@+id/tv_detailFragment_comment"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:textColor="@color/text_color"
+            app:layout_constraintEnd_toEndOf="@+id/iv_detailFragment_comment"
+            app:layout_constraintStart_toStartOf="@+id/iv_detailFragment_comment"
+            app:layout_constraintTop_toBottomOf="@id/iv_detailFragment_comment"
+            tools:text="0" />
+
+        <TextView
+            android:id="@+id/tv_detailFragment_description"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="40dp"
+            android:layout_marginBottom="24dp"
+            android:textColor="@color/text_color"
+            android:textSize="16sp"
+            app:layout_constraintEnd_toEndOf="@id/guideline_detailFragment_right"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@+id/guideline_detailFragment_left"
+            app:layout_constraintTop_toBottomOf="@+id/iv_detailFragment_viewCount"
+            tools:text="Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum." />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_detailFragment_left"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_begin="34dp" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline_detailFragment_right"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_end="34dp" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

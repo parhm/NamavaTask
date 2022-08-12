@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="SearchFieldStyle" parent="Widget.MaterialComponents.TextInputLayout.FilledBox">
+        <item name="startIconDrawable">@drawable/ic_search</item>
+        <item name="iconTint">@color/darkGray</item>
+        <item name="android:inputType">text</item>
+        <item name="android:hint">@string/search_video</item>
+        <item name="hintTextColor">@color/darkGray</item>
+    </style>
+</resources>
